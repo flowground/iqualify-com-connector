@@ -1,0 +1,22 @@
+{
+    "type": "object",
+    "properties": {
+        "offeringId": {
+            "required": true,
+            "type": "string"
+        },
+        "groupId": {
+            "required": true,
+            "type": "string",
+            "pattern": "^[0-9a-fA-F]{24}$"
+        },
+        "requestBody": {
+            "properties": {
+                "email": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

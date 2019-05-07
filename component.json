@@ -1,0 +1,1117 @@
+{
+    "title": "iQualify",
+    "description": "The iQualify API offers management and analytics responses for building\nlearning experiences using your iQualify instance data.\n\nOnce you've registered with iQualify, you can request an API access token by\nnavigating to the API access section of the \"Account Settings\" area.\n\nFind out how to [Request your API access token](https://intercom.help/iqualify/iqualify-set-up/authentication/requesting-your-api-access-token) on our Knowledge base.\n\nAll endpoints are only accessible via https and are located at\napi.iqualify.com. For instance: you can find your current offerings by\naccessing the following URL:\n\n    https://api.iqualify.com/v1/offerings/current\n\n",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/iqualify.com/v1/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://api.iqualify.com/v1",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "jwt": {
+                "label": "Authorization (jwt)",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "get_": {
+            "main": "./lib/actions/get_.js",
+            "title": "List supported endpoints URLs",
+            "description": "Responds with all supported endpoints URLs for v1 version.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_course_mappings": {
+            "main": "./lib/actions/get_course_mappings.js",
+            "title": "Find course mappings",
+            "description": "Returns all the course mappings",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_course_mappings.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_course_mappings__offeringId_": {
+            "main": "./lib/actions/get_course_mappings__offeringId_.js",
+            "title": "Finds course mappings by offering id",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_course_mappings__offeringId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_course_mappings__offeringId___externalCourseId_": {
+            "main": "./lib/actions/delete_course_mappings__offeringId___externalCourseId_.js",
+            "title": "Remove course mapping",
+            "description": "Removes the course mapping between the offering and the external course id",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_course_mappings__offeringId___externalCourseId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_course_mappings__offeringId___externalCourseId_": {
+            "main": "./lib/actions/put_course_mappings__offeringId___externalCourseId_.js",
+            "title": "Add course mapping",
+            "description": "Creates a mapping between the offering and the external course id",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_course_mappings__offeringId___externalCourseId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_courses": {
+            "main": "./lib/actions/get_courses.js",
+            "title": "Find courses",
+            "description": "Responds with courses that can be activated (made to an offering).",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_courses.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_courses__contentId_": {
+            "main": "./lib/actions/get_courses__contentId_.js",
+            "title": "Find course by content id",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_courses__contentId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_courses__contentId__metadata_category": {
+            "main": "./lib/actions/put_courses__contentId__metadata_category.js",
+            "title": "Update course category",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_courses__contentId__metadata_category.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_courses__contentId__metadata_level": {
+            "main": "./lib/actions/put_courses__contentId__metadata_level.js",
+            "title": "Update course level",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_courses__contentId__metadata_level.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_courses__contentId__metadata_tags": {
+            "main": "./lib/actions/put_courses__contentId__metadata_tags.js",
+            "title": "Update course tags",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_courses__contentId__metadata_tags.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_courses__contentId__metadata_topic": {
+            "main": "./lib/actions/put_courses__contentId__metadata_topic.js",
+            "title": "Update course topic",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_courses__contentId__metadata_topic.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_courses__contentId__permissions": {
+            "main": "./lib/actions/post_courses__contentId__permissions.js",
+            "title": "Update course access",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_courses__contentId__permissions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_offerings": {
+            "main": "./lib/actions/get_offerings.js",
+            "title": "Get current, past and future offerings",
+            "description": "Responds with all offerings for your organisation.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_offerings.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_offerings": {
+            "main": "./lib/actions/post_offerings.js",
+            "title": "Create offering",
+            "description": "Creates new offering.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_offerings.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_offerings_current": {
+            "main": "./lib/actions/get_offerings_current.js",
+            "title": "Find active offerings",
+            "description": "Responds with current (active) offerings for your organisation. Offering is current when today's date is between (inclusive) it's `start` and `end` date.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_offerings_current.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_offerings_future": {
+            "main": "./lib/actions/get_offerings_future.js",
+            "title": "Find future offerings",
+            "description": "Responds with future (inactive) offerings for your organisation. Future offerings have their `start` date after today's date (inclusive).",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_offerings_future.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_offerings_past": {
+            "main": "./lib/actions/get_offerings_past.js",
+            "title": "Find past offerings",
+            "description": "Responds with past (inactive) offerings for your organisation. Past offerings have their `end` date before today's date (inclusive).",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_offerings_past.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_offerings__offeringId_": {
+            "main": "./lib/actions/get_offerings__offeringId_.js",
+            "title": "Find offering by id",
+            "description": "Returns an offering matching the offeringId.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_offerings__offeringId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "patch_offerings__offeringId_": {
+            "main": "./lib/actions/patch_offerings__offeringId_.js",
+            "title": "Update offering",
+            "description": "Updates the offering.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/patch_offerings__offeringId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_offerings__offeringId__analytics_channels__channelId__comments": {
+            "main": "./lib/actions/get_offerings__offeringId__analytics_channels__channelId__comments.js",
+            "title": "Find comments",
+            "description": "Responds with a list of all comments in any of the posts for a channel in a offering",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_offerings__offeringId__analytics_channels__channelId__comments.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_offerings__offeringId__analytics_channels__channelId__posts": {
+            "main": "./lib/actions/get_offerings__offeringId__analytics_channels__channelId__posts.js",
+            "title": "Find posts",
+            "description": "Responds with a list of posts for a channel in a offering",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_offerings__offeringId__analytics_channels__channelId__posts.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_offerings__offeringId__analytics_channels__channelId__replies": {
+            "main": "./lib/actions/get_offerings__offeringId__analytics_channels__channelId__replies.js",
+            "title": "Find replies",
+            "description": "Responds with a list of all replies in any of the posts for a channel in a offering",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_offerings__offeringId__analytics_channels__channelId__replies.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_offerings__offeringId__analytics_learners_progress": {
+            "main": "./lib/actions/get_offerings__offeringId__analytics_learners_progress.js",
+            "title": "Find learners progress",
+            "description": "Responds with learners progress.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_offerings__offeringId__analytics_learners_progress.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_offerings__offeringId__analytics_marks_assignments": {
+            "main": "./lib/actions/get_offerings__offeringId__analytics_marks_assignments.js",
+            "title": "Find assignments marks",
+            "description": "Responds with assignments marks.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_offerings__offeringId__analytics_marks_assignments.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_offerings__offeringId__analytics_marks_quizzes": {
+            "main": "./lib/actions/get_offerings__offeringId__analytics_marks_quizzes.js",
+            "title": "Find quizzes marks",
+            "description": "Responds with quizzes marks.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_offerings__offeringId__analytics_marks_quizzes.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_offerings__offeringId__analytics_pulses_": {
+            "main": "./lib/actions/get_offerings__offeringId__analytics_pulses_.js",
+            "title": "Find pulses ids",
+            "description": "Returns ids of all pulses that learners responded to.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_offerings__offeringId__analytics_pulses_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_offerings__offeringId__analytics_pulses_responses": {
+            "main": "./lib/actions/get_offerings__offeringId__analytics_pulses_responses.js",
+            "title": "Find pulses by offeringId",
+            "description": "Returns pulses' responses matching the offeringId.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_offerings__offeringId__analytics_pulses_responses.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_offerings__offeringId__analytics_pulses__pulseId__responses": {
+            "main": "./lib/actions/get_offerings__offeringId__analytics_pulses__pulseId__responses.js",
+            "title": "Find pulses by offeringId and pulseId",
+            "description": "Returns pulse's responses matching the offeringId and pulseId.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_offerings__offeringId__analytics_pulses__pulseId__responses.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_offerings__offeringId__analytics_submissions_assignments": {
+            "main": "./lib/actions/get_offerings__offeringId__analytics_submissions_assignments.js",
+            "title": "Find submissions to assignments, including marks if any",
+            "description": "Responds with assignments submissions.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_offerings__offeringId__analytics_submissions_assignments.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_offerings__offeringId__assessments": {
+            "main": "./lib/actions/get_offerings__offeringId__assessments.js",
+            "title": "Find offering's assessments",
+            "description": "Get all offering's assessments",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_offerings__offeringId__assessments.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "patch_offerings__offeringId__assessments__assessmentId_": {
+            "main": "./lib/actions/patch_offerings__offeringId__assessments__assessmentId_.js",
+            "title": "Update assessment details",
+            "description": "Modifies assessment details",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/patch_offerings__offeringId__assessments__assessmentId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_offerings__offeringId__assessments__assessmentId__documents": {
+            "main": "./lib/actions/post_offerings__offeringId__assessments__assessmentId__documents.js",
+            "title": "Upload new document",
+            "description": "Uploads assessment document file",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_offerings__offeringId__assessments__assessmentId__documents.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_offerings__offeringId__assessments__assessmentId__documents__documentId_": {
+            "main": "./lib/actions/delete_offerings__offeringId__assessments__assessmentId__documents__documentId_.js",
+            "title": "Remove the document",
+            "description": "Removes assessment document file",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_offerings__offeringId__assessments__assessmentId__documents__documentId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_offerings__offeringId__channels": {
+            "main": "./lib/actions/get_offerings__offeringId__channels.js",
+            "title": "Find channels",
+            "description": "Responds with a list of channels in a offering",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_offerings__offeringId__channels.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_offerings__offeringId__channels": {
+            "main": "./lib/actions/post_offerings__offeringId__channels.js",
+            "title": "Add channel",
+            "description": "Adds new channel to the offering",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_offerings__offeringId__channels.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "patch_offerings__offeringId__channels__channelId_": {
+            "main": "./lib/actions/patch_offerings__offeringId__channels__channelId_.js",
+            "title": "Update channel",
+            "description": "Updates the channel",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/patch_offerings__offeringId__channels__channelId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_offerings__offeringId__cover_image": {
+            "main": "./lib/actions/put_offerings__offeringId__cover_image.js",
+            "title": "Set offering's cover image",
+            "description": "Replaces offering's cover image with uploaded image",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_offerings__offeringId__cover_image.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_offerings__offeringId__groups": {
+            "main": "./lib/actions/get_offerings__offeringId__groups.js",
+            "title": "Find assessment groups",
+            "description": "Responds with a list of assessment groups in an offering",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_offerings__offeringId__groups.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_offerings__offeringId__groups": {
+            "main": "./lib/actions/post_offerings__offeringId__groups.js",
+            "title": "Add an assessment group",
+            "description": "Creates a new assessment group in a offering",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_offerings__offeringId__groups.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_offerings__offeringId__groups__groupId__learners": {
+            "main": "./lib/actions/get_offerings__offeringId__groups__groupId__learners.js",
+            "title": "Find learners in an assessment group",
+            "description": "Responds with a list of learners for the assessment group",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_offerings__offeringId__groups__groupId__learners.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_offerings__offeringId__groups__groupId__learners": {
+            "main": "./lib/actions/post_offerings__offeringId__groups__groupId__learners.js",
+            "title": "Add a learner to an assessment group",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_offerings__offeringId__groups__groupId__learners.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_offerings__offeringId__groups__groupId__learners__userEmail_": {
+            "main": "./lib/actions/delete_offerings__offeringId__groups__groupId__learners__userEmail_.js",
+            "title": "Remove a learner from an assessment group",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_offerings__offeringId__groups__groupId__learners__userEmail_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_offerings__offeringId__metadata_category": {
+            "main": "./lib/actions/put_offerings__offeringId__metadata_category.js",
+            "title": "Update offering category metadata",
+            "description": "Updates the offering category metadata.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_offerings__offeringId__metadata_category.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_offerings__offeringId__metadata_level": {
+            "main": "./lib/actions/put_offerings__offeringId__metadata_level.js",
+            "title": "Update offering level metadata",
+            "description": "Updates the offering level metadata.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_offerings__offeringId__metadata_level.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_offerings__offeringId__metadata_tags": {
+            "main": "./lib/actions/put_offerings__offeringId__metadata_tags.js",
+            "title": "Update offering tags metadata",
+            "description": "Updates the offering tags metadata.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_offerings__offeringId__metadata_tags.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_offerings__offeringId__metadata_topic": {
+            "main": "./lib/actions/put_offerings__offeringId__metadata_topic.js",
+            "title": "Update offering topic metadata",
+            "description": "Updates the offering topic metadata.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_offerings__offeringId__metadata_topic.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_offerings__offeringId__study_plan": {
+            "main": "./lib/actions/put_offerings__offeringId__study_plan.js",
+            "title": "Set offering's study plan",
+            "description": "Replaces offering's study plan with uploaded file",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_offerings__offeringId__study_plan.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_offerings__offeringId__users": {
+            "main": "./lib/actions/get_offerings__offeringId__users.js",
+            "title": "Find offering's users",
+            "description": "Responds with a list of offering's users (facilitators, learners and markers).",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_offerings__offeringId__users.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_offerings__offeringId__users": {
+            "main": "./lib/actions/post_offerings__offeringId__users.js",
+            "title": "Adds user to the offering.",
+            "description": "Adds one or more users to the offering.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_offerings__offeringId__users.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_offerings__offeringId__users__evaluatorEmail__evaluates": {
+            "main": "./lib/actions/delete_offerings__offeringId__users__evaluatorEmail__evaluates.js",
+            "title": "Remove learners from evaluator's list.",
+            "description": "Remove learners from evaluator's list.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_offerings__offeringId__users__evaluatorEmail__evaluates.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_offerings__offeringId__users__evaluatorEmail__evaluates": {
+            "main": "./lib/actions/get_offerings__offeringId__users__evaluatorEmail__evaluates.js",
+            "title": "Find learners evaluated by the peer evaluator.",
+            "description": "Get learners evaluated by the peer evaluator.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_offerings__offeringId__users__evaluatorEmail__evaluates.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_offerings__offeringId__users__evaluatorEmail__evaluates": {
+            "main": "./lib/actions/post_offerings__offeringId__users__evaluatorEmail__evaluates.js",
+            "title": "Add learners to be evaluated by the peer evaluator.",
+            "description": "Add learners to be evaluated by the peer evaluator.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_offerings__offeringId__users__evaluatorEmail__evaluates.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_offerings__offeringId__users__markerEmail__marks": {
+            "main": "./lib/actions/delete_offerings__offeringId__users__markerEmail__marks.js",
+            "title": "Remove learners from marker's list.",
+            "description": "Remove learners from marker's list.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_offerings__offeringId__users__markerEmail__marks.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_offerings__offeringId__users__markerEmail__marks": {
+            "main": "./lib/actions/get_offerings__offeringId__users__markerEmail__marks.js",
+            "title": "Find Learners marked by the marker.",
+            "description": "Get learners marked by the marker.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_offerings__offeringId__users__markerEmail__marks.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_offerings__offeringId__users__markerEmail__marks": {
+            "main": "./lib/actions/post_offerings__offeringId__users__markerEmail__marks.js",
+            "title": "Add learners to be marked by the marker.",
+            "description": "Add learners to be marked by the marker.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_offerings__offeringId__users__markerEmail__marks.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_offerings__offeringId__users__userEmail_": {
+            "main": "./lib/actions/delete_offerings__offeringId__users__userEmail_.js",
+            "title": "Removes user from the offering.",
+            "description": "Removes user from the offering.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_offerings__offeringId__users__userEmail_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_offerings__offeringId__users__userEmail__invite_email": {
+            "main": "./lib/actions/post_offerings__offeringId__users__userEmail__invite_email.js",
+            "title": "Re-sends the invitation e-mail.",
+            "description": "Re-sends the invitation e-mail to the user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_offerings__offeringId__users__userEmail__invite_email.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_offerings__offeringId__users__userEmail__submissions_open_response": {
+            "main": "./lib/actions/get_offerings__offeringId__users__userEmail__submissions_open_response.js",
+            "title": "Gets user's open response assignment submissions",
+            "description": "Gets user's open response assignment submissions.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_offerings__offeringId__users__userEmail__submissions_open_response.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_users": {
+            "main": "./lib/actions/post_users.js",
+            "title": "Add new user",
+            "description": "Adds new user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_users.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_users_all_progress": {
+            "main": "./lib/actions/get_users_all_progress.js",
+            "title": "Learner progress for all offerings",
+            "description": "Returns offering progress for each learner",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_users_all_progress.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_users__userEmail_": {
+            "main": "./lib/actions/get_users__userEmail_.js",
+            "title": "Find user by email",
+            "description": "Returns a user matching the email.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_users__userEmail_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "patch_users__userEmail_": {
+            "main": "./lib/actions/patch_users__userEmail_.js",
+            "title": "Update the user",
+            "description": "Updates the user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/patch_users__userEmail_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_users__userEmail__offerings": {
+            "main": "./lib/actions/get_users__userEmail__offerings.js",
+            "title": "Get user's offerings",
+            "description": "Responds with all user's offerings.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_users__userEmail__offerings.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_users__userEmail__permissions__permissionName_": {
+            "main": "./lib/actions/post_users__userEmail__permissions__permissionName_.js",
+            "title": "Add permission to user",
+            "description": "Adds permission to user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_users__userEmail__permissions__permissionName_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

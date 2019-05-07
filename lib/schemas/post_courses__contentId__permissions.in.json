@@ -1,0 +1,75 @@
+{
+    "type": "object",
+    "properties": {
+        "contentId": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "items": {
+                "allOf": [
+                    {
+                        "properties": {
+                            "email": {
+                                "minLength": 1,
+                                "type": "string"
+                            },
+                            "firstName": {
+                                "minLength": 1,
+                                "type": "string"
+                            },
+                            "lastName": {
+                                "minLength": 1,
+                                "type": "string"
+                            },
+                            "metadata": {
+                                "additionalProperties": false,
+                                "properties": {
+                                    "tags": {
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "type": "array"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "personId": {
+                                "minLength": 1,
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    }
+                ],
+                "properties": {
+                    "isBuilder": {
+                        "default": false,
+                        "type": "boolean"
+                    },
+                    "isReviewer": {
+                        "default": false,
+                        "type": "boolean"
+                    },
+                    "profile": {
+                        "properties": {
+                            "displayName": {
+                                "type": "string"
+                            },
+                            "mobile": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    }
+                },
+                "required": [
+                    "email"
+                ],
+                "type": "object"
+            },
+            "title": "users to be added to the offering.",
+            "type": "array"
+        }
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "contentId": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

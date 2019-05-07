@@ -1,0 +1,71 @@
+{
+    "type": "object",
+    "properties": {
+        "offeringId": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "contentId": {
+                    "minLength": 1,
+                    "type": "string"
+                },
+                "description": {
+                    "minLength": 1,
+                    "type": "string"
+                },
+                "earlyCloseOffDate": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "end": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "isReadonly": {
+                    "type": "boolean"
+                },
+                "metadata": {
+                    "additionalProperties": false,
+                    "properties": {
+                        "category": {
+                            "type": "string"
+                        },
+                        "level": {
+                            "type": "string"
+                        },
+                        "tags": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "topic": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "minLength": 1,
+                    "type": "string"
+                },
+                "start": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "trailerVideoUrl": {
+                    "minLength": 1,
+                    "type": "string"
+                },
+                "version": {
+                    "description": "Content version, if not specified, the most recent version is used.",
+                    "minLength": 1,
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

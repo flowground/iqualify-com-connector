@@ -1,0 +1,18 @@
+{
+    "type": "object",
+    "properties": {
+        "offeringId": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "additionalProperties": false,
+            "properties": {
+                "category": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

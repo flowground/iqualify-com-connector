@@ -1,0 +1,15 @@
+{
+    "name": "iqualify-com-connector",
+    "version": "1.0.0",
+    "description": "The iQualify API offers management and analytics responses for building\nlearning experiences using your iQualify instance data.\n\nOnce you’ve registered with iQualify, you can request an API access token by\nnavigating to the API access section of the \"Account Settings\" area.\n\nFind out how to [Request your API access token](https://intercom.help/iqualify/iqualify-set-up/authentication/requesting-your-api-access-token) on our Knowledge base.\n\nAll endpoints are only accessible via https and are located at\napi.iqualify.com. For instance: you can find your current offerings by\naccessing the following URL:\n\n    https://api.iqualify.com/v1/offerings/current\n\n",
+    "main": "component.json",
+    "dependencies": {
+        "elasticio-node": "0.0.9",
+        "elasticio-sailor-nodejs": "^2.2.1",
+        "swagger-client": "^3.8.22"
+    },
+    "author": {
+        "name": "Deutsche Telekom AG"
+    },
+    "license": "Apache-2.0"
+}

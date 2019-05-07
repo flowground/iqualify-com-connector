@@ -1,0 +1,22 @@
+{
+    "type": "object",
+    "properties": {
+        "offeringId": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "title": {
+                    "default": "my group #1",
+                    "minLength": 1,
+                    "type": "string"
+                }
+            },
+            "required": [
+                "title"
+            ],
+            "type": "object"
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "type": "object",
+    "properties": {
+        "offeringId": {
+            "required": true,
+            "type": "string"
+        },
+        "facilitators": {
+            "type": "boolean",
+            "default": true
+        },
+        "learners": {
+            "type": "boolean",
+            "default": true
+        },
+        "markers": {
+            "type": "boolean",
+            "default": true
+        }
+    }
+}

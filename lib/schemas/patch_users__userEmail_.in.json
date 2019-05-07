@@ -1,0 +1,43 @@
+{
+    "type": "object",
+    "properties": {
+        "userEmail": {
+            "required": true,
+            "type": "string",
+            "format": "email"
+        },
+        "requestBody": {
+            "properties": {
+                "email": {
+                    "minLength": 1,
+                    "type": "string"
+                },
+                "firstName": {
+                    "minLength": 1,
+                    "type": "string"
+                },
+                "lastName": {
+                    "minLength": 1,
+                    "type": "string"
+                },
+                "metadata": {
+                    "additionalProperties": false,
+                    "properties": {
+                        "tags": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "personId": {
+                    "minLength": 1,
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

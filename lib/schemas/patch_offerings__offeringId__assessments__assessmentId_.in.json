@@ -1,0 +1,37 @@
+{
+    "type": "object",
+    "properties": {
+        "offeringId": {
+            "required": true,
+            "type": "string"
+        },
+        "assessmentId": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "content": {
+                    "type": "string"
+                },
+                "dueDate": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "markNumber": {
+                    "minLength": 1,
+                    "type": "string"
+                },
+                "markType": {
+                    "minLength": 1,
+                    "type": "string"
+                },
+                "openDate": {
+                    "format": "date-time",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

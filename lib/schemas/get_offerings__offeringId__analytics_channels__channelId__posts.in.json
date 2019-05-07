@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": {
+        "offeringId": {
+            "required": true,
+            "type": "string"
+        },
+        "channelId": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

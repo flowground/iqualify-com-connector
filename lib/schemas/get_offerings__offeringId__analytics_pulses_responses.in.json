@@ -1,0 +1,23 @@
+{
+    "type": "object",
+    "properties": {
+        "offeringId": {
+            "required": true,
+            "type": "string"
+        },
+        "pulseType": {
+            "type": "string",
+            "enum": [
+                "submit_text",
+                "MCQ",
+                "spatial_triangular",
+                "spatial_planar",
+                "spatial_linear"
+            ]
+        },
+        "responseTime": {
+            "type": "string",
+            "minLength": 1
+        }
+    }
+}

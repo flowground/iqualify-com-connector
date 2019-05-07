@@ -1,0 +1,15 @@
+{
+    "type": "object",
+    "properties": {
+        "_top": {
+            "type": "integer",
+            "default": 20
+        },
+        "_orderby": {
+            "type": "string"
+        },
+        "_filter": {
+            "type": "string"
+        }
+    }
+}

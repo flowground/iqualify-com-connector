@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": {
+        "offeringId": {
+            "required": true,
+            "type": "string"
+        },
+        "markerEmail": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}
